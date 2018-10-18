@@ -1,0 +1,10 @@
+.moments_on{
+    opacity: 1;
+    overflow-x: hidden;
+}
+.moments_off{
+    opacity: 0;
+    height: 0;
+    overflow-x: hidden;
+    width: 0;
+}
