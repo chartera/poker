@@ -1,8 +1,7 @@
 #ifndef DEAL_H
 #define DEAL_H
  
-#define PI (3.1416)
- 
-extern int meineFunktion1();
+extern int getRandom(int);
+extern void printHand();
 
 #endif /* DEAL_H */

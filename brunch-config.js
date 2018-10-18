@@ -50,7 +50,7 @@ exports.config = {
 
 	    let env =
 		process.env["PATH"] +
-		"path/to/emscripton";
+		":/Users/naeltasmim/Downloads/emsdk/emscripten/1.38.12/";
 
 	    var file = path.join(process.env.PWD,
 				 "apps",

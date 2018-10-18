@@ -17,6 +17,21 @@ These instructions will get you a copy of the project up and running on your loc
 You need update **brunch-config.json** to set the **emscripten**
 directory for the environment.
 
+### Examples
+
+You need a server wich serves the assets for your or you
+need to setup brunch for this:
+
+```
+TODO
+```
+
+Go to the JavaScript console in your browser and type:
+
+```
+> _getHand();
+```
+
 ## Contributing
 
 ## Versioning
@@ -30,3 +45,6 @@ directory for the environment.
 
 This project is licensed under the MIT License.
 
+## Todos
+
+* Print c stacktrace over nodejs exec. (See brunch-config.js 77)
