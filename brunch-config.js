@@ -44,7 +44,7 @@ exports.config = {
 
   hooks: {
       onCompile(generatedFiles, changedAssets) {
-	if(changedAssets[0] && changedAssets[0].path === "static/wasm/main.c"){
+	  if(changedAssets[0] && changedAssets[0].path.includes("static/wasm/")){
 
 	    let env =
 		process.env["PATH"] +
@@ -57,10 +57,14 @@ exports.config = {
 				 "static",
 				 "templates",
 				 "poker",
-				 "wasm")
+				 "wasm",
+				 "src")
 
-	    console.log("time to compile wasm poker"); 
-	    exec('emcc main.c -s WASM=1 -o index.html', {
+	    console.log("time to compile wasm poker");
+	    // emcc main.c deal.c -s WASM=1 -o index.html
+	    // emcmake cmake -H. -B../build  --> first time
+	    // cmake --build ../build -- -j3 --> then
+	    exec('cmake --build ../build -- -j3', {
 		cwd: file,
 		env: {'PATH': env}
 	    }, function(error, stdout, stderr) {
@@ -110,7 +114,7 @@ exports.config = {
 	  host: "localhost",
 	  port: 5005,
 	  forcewss: true,
-	  delay: 1000
+	  delay: 3000
     }
   },
 

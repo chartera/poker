@@ -95,6 +95,6 @@
       });
     </script>
 
-    <script async src="/templates/poker/wasm/index.js"></script>
+    <script async src="/templates/poker/wasm/src/bin/WasmExe.js"></script>
   
 </html>
