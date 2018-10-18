@@ -1,3 +1,3 @@
 int meineFunktion1() {
-  return 21; 
+  return 21;  
 }

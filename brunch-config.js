@@ -1,5 +1,7 @@
 var exec = require('child_process').exec;
 var path = require('path');
+var fs = require('fs');
+var webassembly_cached = false;
 exports.config = {
   // See http://brunch.io/#documentation for docs.
   files: {
@@ -44,11 +46,11 @@ exports.config = {
 
   hooks: {
       onCompile(generatedFiles, changedAssets) {
-	  if(changedAssets[0] && changedAssets[0].path.includes("static/wasm/")){
+	  if(changedAssets[0] && changedAssets[0].path.includes("webassembly/wasm/")){
 
 	    let env =
 		process.env["PATH"] +
-		"<<path/to/emscripton>>";
+		"path/to/emscripton";
 
 	    var file = path.join(process.env.PWD,
 				 "apps",
@@ -60,17 +62,24 @@ exports.config = {
 				 "wasm",
 				 "src")
 
-	    console.log("time to compile wasm poker");
+	      var cmd;
+	      if (!webassembly_cached) {
+		  cmd = "emcmake cmake -H. -B../build && cmake --build ../build -- -j3";
+		  if (fs.existsSync(path.join(file, "bin"))) {
+		      webassembly_cached = true;
+		      cmd = "cmake --build ../build -- -j3";
+		  }
+	      }else{
+		  cmd = "cmake --build ../build -- -j3";
+	      }
+	      
 	    // emcc main.c deal.c -s WASM=1 -o index.html
-	    // emcmake cmake -H. -B../build  --> first time
-	    // cmake --build ../build -- -j3 --> then
-	    exec('cmake --build ../build -- -j3', {
+	    exec(cmd, {
 		cwd: file,
 		env: {'PATH': env}
 	    }, function(error, stdout, stderr) {
 		// work with result
-		console.log("wasm compile finish", stdout || error || stderr);
-		
+		console.log("wasm compile finish", stdout || error || stderr);	
 	    });
 	}
     },
@@ -80,12 +89,20 @@ exports.config = {
     // This option sets where we should place non-css and non-js assets in.
     // By default, we set this to "/assets/static". Files in this directory
     // will b e copied to `paths.public`, which is "priv/static" by default.
-    assets: /^(static)/
+      assets: function(str){
+	  if(str.match(/^(webassembly)/)){
+	      return str.match(/^(webassembly)/);
+	  }else if(str.match(/^(static)/)){
+	      return str.match(/^(static)/)
+	  }else{
+	      return null;
+	  }
+      }
   },
 
   paths: {
     // Dependencies and current project directories to watch
-      watched: ["static", "css", "js", "vendor", "wasm"],
+      watched: ["static", "css", "js", "webassembly"],
     // Where to compile files to
     public: "../../priv/static/templates/poker"
   },
@@ -114,7 +131,10 @@ exports.config = {
 	  host: "localhost",
 	  port: 5005,
 	  forcewss: true,
-	  delay: 3000
+	  delay: 3000,
+	  keyPath: '../../priv/keys/44041675.pem',
+	  certPath: '../../priv/keys/44041675.csr',
+	  forcewss: true
     }
   },
 

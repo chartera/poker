@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <emscripten.h>
 #include "deal.h"
-
+ 
 #define LENGTH_OF(array) ((int) (sizeof(array) / sizeof(array[0])))
 
 void print_range(int*, int);
