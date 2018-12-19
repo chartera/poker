@@ -1,0 +1,3 @@
+/Users/naeltasmim/Documents/Repo/gitolite_cloud/howto/c++/webassembly/poker/priv/static/templates/poker/wasm/build/CMakeFiles/rebuild_cache.dir
+/Users/naeltasmim/Documents/Repo/gitolite_cloud/howto/c++/webassembly/poker/priv/static/templates/poker/wasm/build/CMakeFiles/edit_cache.dir
+/Users/naeltasmim/Documents/Repo/gitolite_cloud/howto/c++/webassembly/poker/priv/static/templates/poker/wasm/build/CMakeFiles/WasmExe.dir

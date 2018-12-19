@@ -17,6 +17,13 @@ These instructions will get you a copy of the project up and running on your loc
 You need update **brunch-config.json** to set the **emscripten**
 directory for the environment.
 
+### install
+
+```
+$ npm install
+$ brunch watch --server
+```
+
 ### Examples
 
 You need a server wich serves the assets for your or you

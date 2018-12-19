@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/naeltasmim/Documents/Repo/gitolite_cloud/howto/c++/webassembly/poker/priv/static/templates/poker/wasm/src/deal.h
+
+/Users/naeltasmim/Documents/Repo/gitolite_cloud/howto/c++/webassembly/poker/priv/static/templates/poker/wasm/src/main.c
+stdio.h
+-
+deal.h
+/Users/naeltasmim/Documents/Repo/gitolite_cloud/howto/c++/webassembly/poker/priv/static/templates/poker/wasm/src/deal.h
+stdlib.h
+-
+time.h
+-
+emscripten.h
+-
+

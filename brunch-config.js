@@ -17,8 +17,9 @@ exports.config = {
 	},
 
 	order: {
-         before: [
-         ]
+          before: [
+	      
+          ]
        }
 
     },
@@ -53,8 +54,8 @@ exports.config = {
 		":/Users/naeltasmim/Downloads/emsdk/emscripten/1.38.12/";
 
 	    var file = path.join(process.env.PWD,
-				 "apps",
-				 "fileserver",
+//				 "apps",
+//				 "fileserver",
 				 "priv",
 				 "static",
 				 "templates",
@@ -104,7 +105,7 @@ exports.config = {
     // Dependencies and current project directories to watch
       watched: ["static", "css", "js", "webassembly"],
     // Where to compile files to
-    public: "../../priv/static/templates/poker"
+    public: "./priv/static/templates/poker"
   },
 
   // Configure your plugins
@@ -132,8 +133,8 @@ exports.config = {
 	  port: 5005,
 	  forcewss: true,
 	  delay: 3000,
-	  keyPath: '../../priv/keys/44041675.pem',
-	  certPath: '../../priv/keys/44041675.csr',
+//	  keyPath: '../../priv/keys/44041675.pem',
+//	  certPath: '../../priv/keys/44041675.csr',
 	  forcewss: true
     }
   },

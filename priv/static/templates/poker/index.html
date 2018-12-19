@@ -1,0 +1,100 @@
+<!doctype html>
+ 
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+  
+
+    <title>beiuns poker</title>
+    <meta name="description" content="POKER">
+
+    <link rel="stylesheet" href="/vendor/normalize.css">
+    <link rel="stylesheet" href="/vendor/skeleton.min.css">
+    <link href="/vendor/hamburger.css" rel="stylesheet">
+
+    <!--  -->
+    <link rel="stylesheet" href="/templates/poker/css/poker.css">
+
+
+    <!--  -->
+    <script src="/vendor/graphql.js"></script>
+
+
+    <!-- 
+    <script src="/templates/poker/js/vue.min.js"></script>
+    <script src="/templates/poker/js/vue-router.min.js"></script>
+    -->
+    
+    <!--    -->
+    <script src="/vendor/vue.js"></script>
+    <script src="/vendor/vue-router.js"></script>
+    
+    <!-- -->
+    <script src="/templates/poker/js/shell.js"></script>
+    <! -- -->
+    <script src="/templates/poker/js/head.js"></script>
+    <script src="/templates/poker/js/content.js"></script>
+    <script src="/templates/poker/js/home.js"></script>
+    <script src="/templates/poker/js/moments.js"></script>
+    
+    <!-- 
+    <script src="/templates/poker/js/auth.js"></script>
+    -->
+    
+  </head>
+
+  <body>
+    <div class="index_container">
+
+      <div id="head"></div>
+      <div id="content"></div>
+      
+    </div>
+  </body>
+
+    <script> 
+      window.addEventListener('DOMContentLoaded', function(){
+
+	  /* */
+	  var shell = require('js/shell/shell.js');
+	  shell.network.setBus(new Vue({}));
+	  console.log("index: shell load", shell);
+
+	  /* */
+	  var home = require('js/home/main.js');
+	  console.log("index: home load", home);
+	  home = home.init({});
+
+	  /* */
+	  var moments = require('js/moments/main.js');
+	  console.log("index: moments load", moments);
+	  moments = moments.init({});
+
+	  //////////////////////////////////////////////////////////////////
+	  //////////////////////////////////////////////////////////////////
+	  
+	  /* */
+	  var head = require('js/head/main.js');
+	  console.log("index: head load", head);
+	  head = head.init({});
+	  head.view.$mount();
+	  document.getElementById('head').appendChild(head.view.$el);
+
+	  /* */
+	  var content = require('js/content/main.js');
+	  console.log("index: content load", content);
+	  content = content.init({});
+	  content.view.$mount();
+	  document.getElementById('content').appendChild(content.view.$el);
+	  
+	  
+      });
+    </script>
+
+    <script async src="/templates/poker/wasm/src/bin/WasmExe.js"></script>
+  
+</html>
