@@ -19,19 +19,19 @@ directory for the environment.
 
 ### install
 
+Go to the root of the project directory and enter the following in the
+terminal:
+
 ```
 $ npm install
 $ brunch watch --server
 ```
 
+Now go to the directory /poker/webassembly/wasm/src/main.c
+and update some thing. This will automatically compile
+the c source files and push it to the browser.
+
 ### Examples
-
-You need a server wich serves the assets for your or you
-need to setup brunch for this:
-
-```
-TODO
-```
 
 Go to the JavaScript console in your browser and type:
 
