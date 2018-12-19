@@ -13,7 +13,6 @@ exports.config = {
 	    "js/auth.js": /^(js\/auth)/,
 	    "js/moments.js": /^(js\/moments)/,
 	    "js/home.js": /^(js\/home)/
-
 	},
 
 	order: {

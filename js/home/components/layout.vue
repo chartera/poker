@@ -7,7 +7,7 @@
 	  <div v-for="item in sortedItems" class="three column">
 	    <div style="text-align: center;">
 	      <img @click='getInfo(item)'
-		src="/templates/www/img/default-user.png"
+		src="/templates/poker/img/default-user.png"
 		   style="height: 9em; width: 80%"/>
 	    </div>
 	  </div>

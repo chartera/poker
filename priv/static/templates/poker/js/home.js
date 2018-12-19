@@ -212,7 +212,7 @@ exports.default = {
 if (module.exports.__esModule) module.exports = module.exports.default
 var __vue__options__ = (typeof module.exports === "function"? module.exports.options: module.exports)
 if (__vue__options__.functional) {console.error("[vueify] functional components are not supported and should be defined in plain js files using render functions.")}
-__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{'visible': _vm.visible, 'no_visible': !_vm.visible}},[_c('div',{staticClass:"container"},[_c('div',{staticClass:"row"},[_c('div',{staticClass:"twelve columns"},_vm._l((_vm.sortedItems),function(item){return _c('div',{staticClass:"three column"},[_c('div',{staticStyle:{"text-align":"center"}},[_c('img',{staticStyle:{"height":"9em","width":"80%"},attrs:{"src":"/templates/www/img/default-user.png"},on:{"click":function($event){_vm.getInfo(item)}}})])])}),0)])])])}
+__vue__options__.render = function render () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{class:{'visible': _vm.visible, 'no_visible': !_vm.visible}},[_c('div',{staticClass:"container"},[_c('div',{staticClass:"row"},[_c('div',{staticClass:"twelve columns"},_vm._l((_vm.sortedItems),function(item){return _c('div',{staticClass:"three column"},[_c('div',{staticStyle:{"text-align":"center"}},[_c('img',{staticStyle:{"height":"9em","width":"80%"},attrs:{"src":"/templates/poker/img/default-user.png"},on:{"click":function($event){_vm.getInfo(item)}}})])])}),0)])])])}
 __vue__options__.staticRenderFns = []
 if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   hotAPI.install(require("vue"), true)
@@ -221,7 +221,7 @@ if (module.hot) {(function () {  var hotAPI = require("vue-hot-reload-api")
   if (!module.hot.data) {
     hotAPI.createRecord("data-v-336fa47b", __vue__options__)
   } else {
-    hotAPI.reload("data-v-336fa47b", __vue__options__)
+    hotAPI.rerender("data-v-336fa47b", __vue__options__)
   }
 })()}
 });
