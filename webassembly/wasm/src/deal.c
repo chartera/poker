@@ -2,7 +2,7 @@
 #include <stdbool.h> /* c99 only */
 #include <stdlib.h>
 #include <time.h>
-
+ 
 
 #define NUM_SUITS 4
 #define NUM_RANKS 13
@@ -24,9 +24,8 @@ void printHand(){
 		       't', 'j', 'q', 'k','a'};
   const char suit_code[] = {'c', 'd', 'h', 's'};
 
-
-  printf("Your hand:");
-  
+  printf("Your hand");
+   
   while(iterator > 0) {
     suit = getRandom(NUM_SUITS);
     rank = getRandom(NUM_RANKS);
